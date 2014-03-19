@@ -1,0 +1,19 @@
+<h2>Here are all of your calculations listed</h2>
+<table class="table">
+	<thead>
+		<th>#</th>
+		<th>EMI</th>
+		<th>Principal Amount</th>
+		<th>Interest Rate</th>
+		<th>Payment Years</th>
+	</thead>
+<% @emis.each do |emi| %>
+  	<tr>
+	    <td><%= emi.id %></td>
+	    <td><%= emi.emi %></td>
+	    <td><%= emi.principal_amount %></td>
+	    <td><%= emi.interest_rate %></td>
+	    <td><%= emi.payments_year %></td>
+	</tr>
+<% end %>
+</table>

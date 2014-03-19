@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+		        	<span class="sr-only">Toggle navigation</span>
+		 			<span class="icon-bar"></span>
+		 			<span class="icon-bar"></span>
+		 			<span class="icon-bar"></span>
+		        </button> <a class="navbar-brand" href="<%= @domain %>">EMI Calculator</a>
+		    </div>
+		    <% if @display_menu %>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        <ul class="nav navbar-nav navbar-right">
+		            <li><a <%= raw @home_class %> href="<% @domain %>/home">Home</a></li>
+		            <li class="dropdown">
+          				<a <%= raw @emi_class %> href="#" class="dropdown-toggle" data-toggle="dropdown">EMI <b class="caret"></b></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a <%= raw @calculate_class %> href="<%= @domain %>/calculate">Calculate</a></li>
+				            <li><a <%= raw @history_class %> href="<%= @domain %>/history">History</a></li>
+			          	</ul>
+			        </li>
+		            <li><a <%= raw @profile_class %> href="<%= @domain %>/profile">Profile</a></li>
+	            	<li><button class="btn btn-logout" href="#" onclick="location.href='<%= @domain %>/logout'"><i class="glyphicon glyphicon-log-out"></i> Log out</button></li>
+		        </ul>
+		    </div>
+		    <% else %>
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			        <ul class="nav navbar-nav navbar-right">
+	    			<% if @current_url == @domain + '/' %>
+		            	<li><button class="btn btn-logout" href="#" onclick="location.href='<%= @domain %>/signup'"><i class="glyphicon glyphicon-user"></i> Sign up</button></li>
+					<% else %>
+		            	<li><button class="btn btn-logout" href="#" onclick="location.href='<%= @domain %>'"><i class="glyphicon glyphicon-log-in"></i> Sign in</button></li>
+		            <% end %>
+			        </ul>
+		        </div>
+		    <% end %>
+		</div>
+	</nav>
+	<div class="outer-container container">
+		<%= yield %>
+	</div>
+
+    <div id="footer">
+      	<div class="container">
+        	<p class="text-muted">&copy; Nitish Gundherva</p>
+      	</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap.min
+ *= require_self
+ *= require_tree .
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('./fonts/glyphicons-halflings-regular.eot');
+  src: url('./fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('./fonts/glyphicons-halflings-regular.woff') format('woff'), 
+       url('./fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('./fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {
+	background: #FCFCFC;
+}
+.outer-container {
+	min-height: 450px;
+	margin-bottom: 50px;
+}
+
+a, button, input {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Links */
+a, a:visited {
+	color: #1CBA76;
+}
+a:hover, a:focus {
+	border-bottom: thin solid rgba(221, 219, 206, 0);
+	border-bottom-color: #D3D0BF;
+}
+
+/* Navigation */
+nav {
+	line-height: 50px;
+	background: #111;
+	height: 50px;
+}
+.navbar-inverse .navbar-brand {
+	color: #E9E9E9;
+}
+a.navbar-brand {
+	border: 0;
+	font-weight: bold;
+	font-size: 22px;
+}
+.navbar-inverse .navbar-nav>li>a {
+	font-size: 16px;
+	border: 0;
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a.active {
+	border-bottom: 3px solid #6dbddc;
+	color: #FFF;
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+.navbar-nav>li>.dropdown-menu {
+	background: #FFF;
+	margin-top: -2px;
+	padding: 0;
+}
+.dropdown-menu>li>a {
+	background: #FFF;
+	color: #999;
+	height: 35px;
+	line-height: 30px;
+	font-size: 16px;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a.active {
+	border: 0;
+	color: #FFF;
+	background: #6dbddc;
+}
+
+/* Buttons */
+.btn {
+	border-radius: 0;
+	color: #F0F0F0;
+}
+.btn:hover {
+	color: #FFF;
+}
+.btn-logout {
+	margin-left: 50px;
+	background: #f9745f;
+}
+.btn-logout:hover, .btn-logout:focus {
+	background: #F6533A;
+}
+
+/* Footer */
+#footer {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}

@@ -11,9 +11,13 @@ class Emi < ActiveRecord::Base
 		t = emi[:payments_year].to_f
 		n = emi[:number_installments].to_f
 		rv = emi[:residual_value].to_f
+		r1 = r1.to_f
+		r2 = r2.to_f
+		r3 = r3.to_f
+		x = x.to_f
 		r1 = p*(i/t)
-		r2 = (rv * (i/t)) / ((1 + (i/t))**n)
-		r3 = 1 - (1 / ((1 + (i/t))**n))
+		r2 = (rv * (i/t)) / ((1.0 + (i/t))**n)
+		r3 = 1.0 - (1.0 / ((1.0 + (i/t))**n))
 		x = (r1 - r2)/r3
 		return x
 	end

@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
 		  	session[:user_id] = authorized_user.id
 		  	redirect_to(:action => 'login')
 		else
-		  	flash[:notice] = "Invalid Username or Password"
-		  	flash[:color]= "invalid"
+		  	flash[:error] = "Invalid Username or Password"
 			redirect_to :action => 'login'
 		end
 	end

@@ -25,8 +25,10 @@
 		            <li class="dropdown">
           				<a <%= raw @emi_class %> href="#" class="dropdown-toggle" data-toggle="dropdown">EMI <b class="caret"></b></a>
 			          	<ul class="dropdown-menu">
-			            	<li><a <%= raw @calculate_class %> href="<%= @domain %>/calculate">Calculate</a></li>
-				            <li><a <%= raw @history_class %> href="<%= @domain %>/history">History</a></li>
+			            	<li><a <%= raw @emi_calculate_class %> href="<%= @domain %>/emi">Calculate EMI</a></li>
+				            <li><a <%= raw @emi_history_class %> href="<%= @domain %>/emi_history">EMIs History</a></li>
+			            	<li><a <%= raw @principal_calculate_class %> href="<%= @domain %>/principal">Calculate P & I Component</a></li>
+				            <li><a <%= raw @principal_history_class %> href="<%= @domain %>/principal_history">Principals History</a></li>
 			          	</ul>
 			        </li>
 		            <li><a <%= raw @profile_class %> href="<%= @domain %>/profile">Profile</a></li>
@@ -47,12 +49,26 @@
 		</div>
 	</nav>
 	<div class="outer-container container">
+	    <% if flash[:error] %>
+	      <div id="notification" class="alert alert-danger">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	        <%= flash[:error] %>
+	      </div>
+	      <% flash[:error] = nil %>
+	    <% end %>
+	    <% if flash[:success] %>
+	      <div id="notification" class="alert alert-success">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	        <%= flash[:success] %>
+	      </div>
+	      <% flash[:success] = nil %>
+	    <% end %>
 		<%= yield %>
 	</div>
 
     <div id="footer">
       	<div class="container">
-        	<p class="text-muted">&copy; Nitish Gundherva</p>
+        	<p class="text-muted">&copy; Nitish Gundherva & Parikh Bansal</p>
       	</div>
     </div>
 </body>

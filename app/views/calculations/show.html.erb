@@ -1,4 +1,6 @@
-<h2>Here are all of your calculations listed</h2>
+<div class="page-header">
+	<h1>EMIs History</h1>
+</div>
 <table class="table">
 	<thead>
 		<th>#</th>
@@ -7,13 +9,20 @@
 		<th>Interest Rate</th>
 		<th>Payment Years</th>
 	</thead>
+<% count = 1 %>
 <% @emis.each do |emi| %>
   	<tr>
-	    <td><%= emi.id %></td>
+	    <td><%= count %></td>
 	    <td><%= emi.emi %></td>
 	    <td><%= emi.principal_amount %></td>
 	    <td><%= emi.interest_rate %></td>
 	    <td><%= emi.payments_year %></td>
+	    <td>
+	    	<%= form_tag(controller: 'calculations', action: 'delete') %>
+	    	<%= hidden_field_tag 'id', emi.id %>
+	    	<%= submit_tag 'Delete', class: 'btn btn-danger btn-xs' %>
+	    </td>
 	</tr>
+	<% count = count + 1 %>
 <% end %>
 </table>

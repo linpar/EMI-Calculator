@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Patua One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Patua One'), local('PatuaOne-Regular'), url(fonts/patua.woff) format('woff');
+}
+@font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Varela Round'), local('VarelaRound-Regular'), url(fonts/varela.woff) format('woff');
+}
+@font-face {
+    font-family: 'Signika';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Signika'), local('Signika-Regular'), url(fonts/signika.woff) format('woff');
+}
+* {
+    font-family: "Varela Round";
+}
+h1 {
+    font-family: 'Patua One';
+}
+footer {
+    margin-top: 100px;
+}
+.navbar-toggle {
+    border-color: #FFF;
+}
+.navbar-toggle .icon-bar {
+    background: #FFF;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.heading {
+    font-family: "signika";
+    font-size: 50px;
+}
+#notification {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+#footer {
+    margin-top: 100px;
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+    border: 0;
+}
+.navbar-brand {
+    background: #f9745f;
+    color: #FFF;
+    height: 65px;
+    line-height: 35px;
+}
+.navbar-brand:hover {
+    background: #f9745f !important;
+    color: #FFF;
+}
+.navbar {
+    border: 0;
+}
+
+.btn {
+    border-radius: 0;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    text-transform: uppercase;
+    border: 0;
+}
+
+.btn-danger:hover {
+    box-shadow: inset 0 32px 0 0 #b14945;
+}
+.btn-danger.btn-xs:hover {
+    box-shadow: inset 0 20px 0 0 #b14945;
+}
+.btn-danger.btn-sm:hover {
+    box-shadow: inset 0 28px 0 0 #b14945;
+}
+.btn-danger.btn-lg:hover {
+    box-shadow: inset 0 43px 0 0 #b14945;
+}
+
+.btn-success:hover {
+    box-shadow: inset 0 32px 0 0 #3b803b;
+}
+.btn-success.btn-xs:hover {
+    box-shadow: inset 0 20px 0 0 #3b803b;
+}
+.btn-success.btn-sm:hover {
+    box-shadow: inset 0 28px 0 0 #3b803b;
+}
+.btn-success.btn-lg:hover {
+    box-shadow: inset 0 43px 0 0 #3b803b;
+}
+
+.btn-info:hover {
+    box-shadow: inset 0 32px 0 0 #3093b1;
+}
+.btn-info.btn-xs:hover {
+    box-shadow: inset 0 20px 0 0 #3093b1;
+}
+.btn-info.btn-sm:hover {
+    box-shadow: inset 0 28px 0 0 #3093b1;
+}
+.btn-info.btn-lg:hover {
+    box-shadow: inset 0 43px 0 0 #3093b1;
+}
+
+.btn-custom, .btn-custom:active, .btn-custom:focus {
+    background: #EF672F;
+    color: #FFF;
+}
+.btn-custom:hover {
+    box-shadow: inset 0 32px 0 0 #D15C29;
+    color: #FFF;
+}
+.btn-custom.btn-xs:hover {
+    box-shadow: inset 0 20px 0 0 #D15C29;
+}
+.btn-custom.btn-sm:hover {
+    box-shadow: inset 0 28px 0 0 #D15C29;
+}
+.btn-custom.btn-lg:hover {
+    box-shadow: inset 0 43px 0 0 #D15C29;
+}

@@ -1,0 +1,24 @@
+<% if(session[:cal_array]) %>
+	<div id="notification" class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        In = <%= session[:cal_array][0] %><br>
+		Pn = <%= session[:cal_array][1] %><br>
+		OPn+1 = <%= session[:cal_array][2] %><br>
+	</div>
+	<% session[:cal_array] = nil %>
+<% end %>
+<div class= "row">
+	<div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1">
+	  	<div class="page-header">
+			<h1>Calculate Principal and Interest Component</h1>
+		</div>
+		<div class="col-md-7 col-sm-10 col-xs-10">
+			<%= form_for :emi, url: {action: :calculate_principal} do |f| %>
+				<label>Installment Amount</label> <%= f.number_field :installment, :class => 'form-control' %></p>
+				<label>Outstanding Principal at the beginning of the nth Installment period</label> <%= f.number_field :principal1, :class => 'form-control' %></p>
+				<label>Interest rate per annum</label> <%= f.number_field :interest2, :class => 'form-control' %></p>
+				<%= submit_tag "Calculate", :class => "btn btn-info" %>
+			<% end %>
+		</div>
+	</div>
+</div>

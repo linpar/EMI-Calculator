@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			flash[:notice] = "You signed up successfully"
+			flash[:success] = "You signed up successfully"
 		end
 		render "new"
 	end
@@ -21,6 +21,10 @@ class UsersController < ApplicationController
 		@title = @user.username + "'s Profile"
   	end
 
+  	def edit
+  		
+  	end
+  	
   	private
   	def user_params
     	params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)

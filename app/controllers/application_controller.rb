@@ -11,12 +11,18 @@ class ApplicationController < ActionController::Base
 			@home_class = 'class="active"'
 		elsif @current_url == @domain + '/profile'
 			@profile_class = 'class="active"'
-		elsif @current_url == @domain + '/calculate'
+		elsif @current_url == @domain + '/emi'
 			@emi_class = 'class="active"'
-			@calculate_class = 'class="active"'
-		elsif @current_url == @domain + '/history'
+			@emi_calculate_class = 'class="active"'
+		elsif @current_url == @domain + '/principal'
 			@emi_class = 'class="active"'
-			@history_class = 'class="active"'
+			@principal_calculate_class = 'class="active"'
+		elsif @current_url == @domain + '/emi_history'
+			@emi_class = 'class="active"'
+			@emi_history_class = 'class="active"'
+		elsif @current_url == @domain + '/principal_history'
+			@emi_class = 'class="active"'
+			@principal_history_class = 'class="active"'
 		end
 
 		if session[:user_id]

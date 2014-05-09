@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	end
 	#Clear Password after form save
 	def clear_password
-  	self.password = nil
+  		self.password = nil
 	end
 	def self.authenticate(username_or_email="", login_password="")
 		if  EMAIL_REGEX.match(username_or_email)    

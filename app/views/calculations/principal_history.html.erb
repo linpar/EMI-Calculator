@@ -1,0 +1,32 @@
+<div class="page-header">
+	<h1>Principals History</h1>
+</div>
+<table class="table">
+	<thead>
+		<th>#</th>
+		<th>Interest component of the nth Installment</th>
+		<th>Principal component of the nth installment</th>
+		<th>Outstanding Principal at the end of the nth Installment period</th>
+		<th>Installment</th>
+		<th>Outstanding Principal at the beginning of the nth Installment period</th>
+		<th>Interest rate per annum</th>
+	</thead>
+<% count = 1 %>
+<% @principals.each do |principal| %>
+  	<tr>
+	    <td><%= count %></td>
+	    <td><%= principal.in %></td>
+	    <td><%= principal.pn %></td>
+	    <td><%= principal.opn1 %></td>
+	    <td><%= principal.installment %></td>
+	    <td><%= principal.principal1 %></td>
+	    <td><%= principal.interest2 %></td>
+	    <td>
+	    	<%= form_tag(controller: 'calculations', action: 'delete_principal') %>
+	    	<%= hidden_field_tag 'id', principal.id %>
+	    	<%= submit_tag 'Delete', class: 'btn btn-danger btn-xs' %>
+	    </td>
+	</tr>
+	<% count = count + 1 %>
+<% end %>
+</table>

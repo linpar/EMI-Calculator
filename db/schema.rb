@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201145121) do
+ActiveRecord::Schema.define(version: 20140509045028) do
 
   create_table "emis", force: true do |t|
     t.integer  "uid"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20140201145121) do
     t.float    "payments_year"
     t.float    "number_installments"
     t.float    "residual_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "principals", force: true do |t|
+    t.integer  "uid"
+    t.float    "in"
+    t.float    "pn"
+    t.float    "opn1"
+    t.float    "installment"
+    t.float    "principal1"
+    t.float    "interest2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

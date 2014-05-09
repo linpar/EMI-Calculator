@@ -1,33 +1,24 @@
+<% if @emi.errors.any? %>
+  <div id="notification" class="alert alert-danger">            
+  <% for message_error in @emi.errors.full_messages %>
+    <%= message_error %><br>
+  <% end %>
+  </div>
+<% end %>
 <div class= "row">
-	<div class="col-md-offset-4">
-		<div class="col-md-6">
+	<div class="col-md-offset-3 col-sm-offset-1 col-xs-offset-1">
+		<div class="col-md-7 col-sm-10 col-xs-10">
 		  	<div class="page-header">
 				<h1>Calculate EMI</h1>
 			</div>
 			<%= form_for :emi, url: {action: :calculate_emi} do |f| %>
-				<label>Original Loan Principal Amount</label> <%= f.number_field :principal_amount, :class => 'form-control' %></p> <!-- #green -> label(display), 	f.number_field -> data type, 	:principal amount -> field name (variable), 	<p> <br/> -> html, 	<%= %> -> ruby -->
+				<label>Original Loan Principal Amount</label> <%= f.number_field :principal_amount, :class => 'form-control' %></p>
 				<label>Interest Rate</label> <%= f.number_field :interest_rate, :class => 'form-control' %></p>
 				<label>No. of payments in a year</label> <%= f.number_field :payments_year, :class => 'form-control' %></p>
 				<label>No. of Installments</label> <%= f.number_field :number_installments, :class => 'form-control' %></p>
 				<label>Residual Value</label> <%= f.number_field :residual_value, :class => 'form-control' %></p>
 				<%= submit_tag "Calculate EMI", :class => "btn btn-info" %>
 			<% end %>
-			<% if @emi.errors.any? %>
-			  <ul class="Emi_Errors">
-			  <% for message_error in @emi.errors.full_messages %>
-			    <li>* <%= message_error %></li>
-			  <% end %>
-			  </ul>
-			<% end %>
-			<% if flash[:notice] %> <!-- #display after submitting! calculated emi -->
-				<div class="notice"><h4>Calculated EMI: <b><%= flash[:notice] %></b></h4></div>
-			    <% flash[:notice] = nil %>
-			<% end %>
-			<% if flash[:error] %> <!-- #display after submitting! calculated emi -->
-				<div class="notice"><h4><b><%= flash[:error] %></b></h4></div>
-			    <% flash[:error] = nil %>
-			<% end %>
-			<!--#</br> : next line -->
 		</div>
 	</div>
 </div>

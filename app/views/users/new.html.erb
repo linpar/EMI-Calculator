@@ -1,29 +1,22 @@
+<% if @user.errors.any? %>
+  <div id="notification" class="alert alert-danger">            
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <% for message_error in @user.errors.full_messages %>
+    <%= message_error %><br>
+  <% end %>
+  </div>
+<% end %>
 <div class= "row">
-  <div class="col-md-offset-3">
-    <div class="col-md-10">
-      <div class="page-header">
-          <h1>Sign up</h1>
-      </div>
-      <div class="col-md-6">
-        <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-          <p> Username:</br> <%= f.text_field :username, :class => 'form-control' %> </p>
-          <p> Email:</br> <%= f.text_field :email, :class => 'form-control' %> </p>
-          <p> Password:</br> <%= f.password_field :password, :class => 'form-control' %></p>
-          <p> Password Confirmation:</br> <%= f.password_field :password_confirmation, :class => 'form-control' %> </p>
-          <%= f.submit :Signup, :class => 'btn btn-info' %>
-        <% end %>
-      </div>
-      <div class="col-md-6">
-        <% if @user.errors.any? %>
-            <% for message_error in @user.errors.full_messages %>
-              <div class="alert alert-danger"> <%= message_error %></div>
-            <% end %>
-        <% end %>
-        <% if flash[:notice] %>
-          <div class="notice"><%= flash[:notice] %></div>
-          <% flash[:notice] = nil %>
-        <% end %>
-      </div>
+  <div class="col-md-5 col-centered">
+    <div class="page-header">
+      <h1>Sign up</h1>
     </div>
+    <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+      <p> *Username:</br> <%= f.text_field :username, :class => 'form-control' %> </p>
+      <p> *Email:</br> <%= f.text_field :email, :class => 'form-control' %> </p>
+      <p> *Password:</br> <%= f.password_field :password, :class => 'form-control' %></p>
+      <p> *Password Confirmation:</br> <%= f.password_field :password_confirmation, :class => 'form-control' %> </p>
+      <%= f.submit :Signup, :class => 'btn btn-info' %>
+    <% end %>
   </div>
 </div>
